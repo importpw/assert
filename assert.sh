@@ -13,3 +13,10 @@ assert_equal() {
     assert "$1" = "$2"
   fi
 }
+
+assert_exit() {
+  local code="$1"
+  shift
+  local actual=$("$@"; echo $?)
+  message="\`$*\` exited with $actual, not $code" assert "$code" -eq "$actual"
+}
