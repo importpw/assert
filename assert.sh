@@ -6,7 +6,7 @@ assert() {
   fi
 }
 
-assert.equal() {
+assert_equal() {
   if [ $# -ge 3 ]; then
     message="${3-}" assert "$1" = "$2"
   else
