@@ -17,6 +17,6 @@ assert_equal() {
 assert_exit() {
   local code="$1"
   shift
-  local actual=$("$@"; echo $?)
+  local actual=$("$@" >/dev/null; echo $?)
   message="\`$*\` exited with $actual, not $code" assert "$code" -eq "$actual"
 }

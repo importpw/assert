@@ -36,3 +36,9 @@ if [ $? -ne 1 ]; then
   echo "assert_exit does not work"
   exit 1
 fi
+
+assert_exit 0 echo foo
+if [ $? -ne 0 ]; then
+  echo "assert_exit does not work"
+  exit 1
+fi
