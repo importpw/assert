@@ -1,6 +1,8 @@
 #!/bin/sh
 source "./assert.sh"
 
+
+# assert
 assert foo = foo
 if [ $? -ne 0 ]; then
   echo "assert does not work"
@@ -13,6 +15,8 @@ if [ $? -ne 1 ]; then
   exit 1
 fi
 
+
+# assert_equal
 assert_equal foo foo
 if [ $? -ne 0 ]; then
   echo "assert_equal does not work"
@@ -25,6 +29,25 @@ if [ $? -ne 1 ]; then
   exit 1
 fi
 
+assert_equal "a b" "a b"
+if [ $? -ne 0 ]; then
+  echo "assert_equal does not work"
+  exit 1
+fi
+
+assert_equal "&" "&"
+if [ $? -ne 0 ]; then
+  echo "assert_equal does not work"
+  exit 1
+fi
+
+assert_equal "!" "!"
+if [ $? -ne 0 ]; then
+  echo "assert_equal does not work"
+  exit 1
+fi
+
+# assert_exit
 assert_exit 1 sh -c "exit 1"
 if [ $? -ne 0 ]; then
   echo "assert_exit does not work"

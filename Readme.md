@@ -1,16 +1,15 @@
 # assert
 
-`assert` for bash.
+`assert` for shell scripts.
 
 ## Example
 
 ```bash
-#!/bin/bash
-set -euo pipefail
+#!/bin/sh
 eval "`curl -sfLS import.pw`"
 
-import "git.io/assert@1.0.0"
+import "git.io/assert@2.1.1"
 
-assert.equal foo bar
+assert_equal foo bar
 # assertion error: foo = bar
 ```
