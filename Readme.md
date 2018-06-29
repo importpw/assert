@@ -8,7 +8,7 @@
 #!/bin/sh
 eval "`curl -sfLS import.pw`"
 
-import "git.io/assert@2.1.1"
+import "import.pw/assert@2.1.1"
 
 assert_equal foo bar
 # assertion error: foo = bar
