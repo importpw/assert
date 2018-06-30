@@ -1,4 +1,3 @@
-#!/bin/bash
 assert() {
   if [ ! "$@" ]; then
     echo "assertion failed: ${message-$*}" >&2
