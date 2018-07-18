@@ -6,11 +6,7 @@ assert() {
 }
 
 assert_equal() {
-  if [ $# -ge 3 ]; then
-    message="${3-}" assert "$1" = "$2"
-  else
-    assert "$1" = "$2"
-  fi
+  message="${3-}" assert "$1" = "$2"
 }
 
 assert_exit() {
