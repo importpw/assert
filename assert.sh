@@ -1,6 +1,6 @@
 assert() {
   if [ ! "$@" ]; then
-    echo "assertion failed: ${message-$*}" >&2
+    echo "assertion failed: ${message:-$*}" >&2
     return 1
   fi
 }
