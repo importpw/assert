@@ -7,7 +7,7 @@ Assertion library for shell scripting.
 
 ```bash
 #!/usr/bin/env import
-import assert@2.1.2
+import assert@2.1.3
 
 assert_equal foo bar
 # assertion error: foo = bar
@@ -28,7 +28,7 @@ Returns 0 if the test passes, or 1 if the test fails.
 
 ```bash
 #!/usr/bin/env import
-import assert@2.1.2
+import assert@2.1.3
 
 assert 1 -eq 2
 # assertion error: 1 -eq 2
@@ -45,7 +45,7 @@ hood.
 
 ```bash
 #!/usr/bin/env import
-import assert@2.1.2
+import assert@2.1.3
 
 assert_equal foo bar
 # assertion error: foo = bar
