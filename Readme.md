@@ -39,7 +39,7 @@ message="one does not equal two" assert 1 -eq 2
 
 ### `assert_equal $actual $expected`
 
-Asserts that the the _actual_ value is equal to the _expected_ value. Strings or
+Tests that the the _actual_ value is equal to the _expected_ value. Strings or
 numbers may be used interchangeably, since the `=` operator is used under the
 hood.
 
@@ -49,4 +49,20 @@ import assert@2.1.3
 
 assert_equal foo bar
 # assertion error: foo = bar
+```
+
+### `assert_exit $exit_code $command`
+
+Tests that the given `command` exits with the specified `exit_code`.
+
+```bash
+#!/usr/bin/env import
+import assert@2.1.3
+
+# Passes
+assert_exit 0 true
+
+# This will fail
+assert_exit 6 sh -c "exit 7"
+# assertion failed: `sh -c exit 7` exited with 0, not 6
 ```
